@@ -168,41 +168,20 @@ TARGET_BOARD_DTS_CONFIG ?= imx8mm:fsl-imx8mm-evk-rm67191.dtb
 # workaround
 TARGET_BOARD_DTS_CONFIG += pre:fsl-imx8mm-evk.dtb
 
-# u-boot target for imx8mm_evk with LPDDR4 on board
-ifeq ($(LOW_MEMORY),true)
-TARGET_BOOTLOADER_CONFIG := imx8mm:imx8mm_evk_1g_ddr_android_defconfig
-else
 TARGET_BOOTLOADER_CONFIG := imx8mm:imx8mm_evk_android_defconfig
-endif
 # u-boot target for imx8mm_evk with DDR4 on board
-TARGET_BOOTLOADER_CONFIG += imx8mm-ddr4:imx8mm_ddr4_evk_android_defconfig
 TARGET_BOOTLOADER_CONFIG += imx8mm-trusty:imx8mm_evk_android_trusty_defconfig
-TARGET_BOOTLOADER_CONFIG += imx8mm-trusty-4g:imx8mm_evk_4g_android_trusty_defconfig
-TARGET_BOOTLOADER_CONFIG += imx8mm-4g:imx8mm_evk_4g_android_defconfig
 # imx8mm with MIPI panel display and QCA wifi
 TARGET_BOARD_DTS_CONFIG += imx8mm-mipi-panel:fsl-imx8mm-evk-rm67191.dtb
-# imx8mm with MIPI-HDMI display, QCA wifi and m4 image to support LPA
-TARGET_BOARD_DTS_CONFIG += imx8mm-m4:fsl-imx8mm-evk-m4.dtb
-# imx8mm with MIPI-HDMI display with BCM wifi
-TARGET_BOARD_DTS_CONFIG += imx8mm-ddr4:fsl-imx8mm-ddr4-evk.dtb
 TARGET_KERNEL_DEFCONFIG := android_defconfig
 
 TARGET_KERNEL_ADDITION_DEFCONF := android_addition_defconfig
 
 # u-boot target used by uuu for imx8mm_evk with LPDDR4 on board
 TARGET_BOOTLOADER_CONFIG += imx8mm-evk-uuu:imx8mm_evk_android_uuu_defconfig
-TARGET_BOOTLOADER_CONFIG += imx8mm-4g-evk-uuu:imx8mm_evk_4g_android_uuu_defconfig
-TARGET_BOOTLOADER_CONFIG += imx8mm-trusty-4g-evk-uuu:imx8mm_evk_4g_android_uuu_defconfig
-# u-boot target used by uuu for imx8mm_evk with DDR4 on board
-TARGET_BOOTLOADER_CONFIG += imx8mm-ddr4-evk-uuu:imx8mm_ddr4_evk_android_uuu_defconfig
 
 BOARD_SEPOLICY_DIRS := \
        device/fsl/imx8m/sepolicy \
        $(IMX_DEVICE_PATH)/sepolicy
-
-ifeq ($(PRODUCT_IMX_DRM),true)
-BOARD_SEPOLICY_DIRS += \
-       $(IMX_DEVICE_PATH)/sepolicy_drm
-endif
 
 TARGET_BOARD_KERNEL_HEADERS := device/fsl/common/kernel-headers
