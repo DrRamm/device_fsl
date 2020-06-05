@@ -165,6 +165,8 @@ BOARD_PREBUILT_DTBOIMAGE := out/target/product/evk_8mm/dtbo-imx8mm.img
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_CUSTOM_DTBOIMG_MK := device/fsl/common/build/dtbo.mk
 TARGET_BOARD_DTS_CONFIG ?= imx8mm:fsl-imx8mm-evk-rm67191.dtb
+# workaround
+TARGET_BOARD_DTS_CONFIG += pre:fsl-imx8mm-evk.dtb
 
 # u-boot target for imx8mm_evk with LPDDR4 on board
 ifeq ($(LOW_MEMORY),true)
