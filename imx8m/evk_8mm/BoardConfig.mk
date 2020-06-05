@@ -84,13 +84,13 @@ WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/brcmfmac/parameters/alternative_fw_pat
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 
 # QCA qcacld wifi driver module
-BOARD_VENDOR_KERNEL_MODULES += \
-    $(KERNEL_OUT)/drivers/net/wireless/qcacld-2.0/wlan.ko
+#BOARD_VENDOR_KERNEL_MODULES += \
+#    $(KERNEL_OUT)/drivers/net/wireless/qcacld-2.0/wlan.ko
 
 # BCM fmac wifi driver module
-BOARD_VENDOR_KERNEL_MODULES += \
-    $(KERNEL_OUT)/drivers/net/wireless/broadcom/brcm80211/brcmfmac/brcmfmac.ko \
-    $(KERNEL_OUT)/drivers/net/wireless/broadcom/brcm80211/brcmutil/brcmutil.ko
+#BOARD_VENDOR_KERNEL_MODULES += \
+#    $(KERNEL_OUT)/drivers/net/wireless/broadcom/brcm80211/brcmfmac/brcmfmac.ko \
+#    $(KERNEL_OUT)/drivers/net/wireless/broadcom/brcm80211/brcmutil/brcmutil.ko
 
 BOARD_USE_SENSOR_FUSION := true
 
