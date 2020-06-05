@@ -138,7 +138,9 @@ else
 CMASIZE=800M
 endif
 
-KERNEL_NAME := Image
+BOARD_KERNEL_IMAGE_NAME := Image
+TARGET_KERNEL_CONFIG := lineage_evk_8mm_defconfig
+
 ifeq ($(LOW_MEMORY),true)
 BOARD_KERNEL_CMDLINE := init=/init androidboot.console=ttymxc1 androidboot.hardware=freescale cma=320M@0x400M-0xb80M androidboot.primary_display=imx-drm firmware_class.path=/vendor/firmware transparent_hugepage=never loop.max_part=7 androidboot.displaymode=720p galcore.contiguousSize=33554432
 else
@@ -157,9 +159,13 @@ $(error "TARGET_USERIMAGES_USE_UBIFS and TARGET_USERIMAGES_USE_EXT4 config open 
 endif
 endif
 
+# DTBO
+# Create dtbo the CAF-way
 BOARD_PREBUILT_DTBOIMAGE := out/target/product/evk_8mm/dtbo-imx8mm.img
-# imx8mm with MIPI-HDMI display and QCA wifi and Trusty support
-TARGET_BOARD_DTS_CONFIG ?= imx8mm:fsl-imx8mm-trusty-evk.dtb
+BOARD_KERNEL_SEPARATED_DTBO := true
+BOARD_CUSTOM_DTBOIMG_MK := device/fsl/common/build/dtbo.mk
+TARGET_BOARD_DTS_CONFIG ?= imx8mm:fsl-imx8mm-evk-rm67191.dtb
+
 # u-boot target for imx8mm_evk with LPDDR4 on board
 ifeq ($(LOW_MEMORY),true)
 TARGET_BOOTLOADER_CONFIG := imx8mm:imx8mm_evk_1g_ddr_android_defconfig
