@@ -1,2 +1,1 @@
-add_lunch_combo evk_8mm-user
-add_lunch_combo evk_8mm-userdebug
+add_lunch_combo lineage_evk_8mm-userdebug

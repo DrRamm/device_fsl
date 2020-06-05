@@ -27,9 +27,5 @@
 # Copied from build/target/product/AndroidProducts.mk
 
 PRODUCT_MAKEFILES := \
-  $(LOCAL_DIR)/evk_8mq/evk_8mq.mk \
-  $(LOCAL_DIR)/evk_8mq/evk_8mq_drm.mk \
-  $(LOCAL_DIR)/evk_8mm/evk_8mm.mk \
-  $(LOCAL_DIR)/evk_8mm/evk_8mm_drm.mk \
-  $(LOCAL_DIR)/evk_8mn/evk_8mn.mk
+  $(LOCAL_DIR)/evk_8mm/lineage_evk_8mm.mk
 
