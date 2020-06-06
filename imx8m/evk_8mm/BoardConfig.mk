@@ -185,3 +185,7 @@ BOARD_SEPOLICY_DIRS := \
        $(IMX_DEVICE_PATH)/sepolicy
 
 TARGET_BOARD_KERNEL_HEADERS := device/fsl/common/kernel-headers
+
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 2
