@@ -186,6 +186,7 @@ BOARD_SEPOLICY_DIRS := \
 
 TARGET_BOARD_KERNEL_HEADERS := device/fsl/common/kernel-headers
 
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.selinux=disabled
+BOARD_KERNEL_CMDLINE += selinux=0 audit=0
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 2
